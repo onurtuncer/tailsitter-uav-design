@@ -166,6 +166,23 @@ limitation, with widely varying speed and attitude, unstable
 long-period behavior in some regimes, and controller sensitivity to
 uncertainty \citep{yang2024}.
 
+That coupling has a two-decade experimental and control heritage.
+Early work established integrated dynamic modeling, control design,
+and trajectory generation for miniature autonomous tail-sitters
+\citep{knoebel2006}, and demonstrated hover, transition, and level
+flight with mode-dependent control laws on a single-propeller indoor
+platform \citep{frank2007} --- the same control-architecture problem
+the present single-propulsor vehicle poses. Transitional flight of a
+small tail-sitter was analyzed at the conceptual level early on
+\citep{kubo2008}, and the T-wing program demonstrated autonomous
+vertical takeoff, transition, wing-borne flight, and landing in
+flight test \citep{stone2008}. Subsequent work carried the maneuver
+from analysis into practice: comprehensive flight-control design
+validated in experiment \citep{jung2013}, optimal control of the
+transition phases to manage control inputs and altitude excursion
+\citep{banazadeh2016}, and hardware-in-the-loop simulation linking
+the dynamic model to autopilot integration \citep{sun2017}.
+
 Against that difficulty, tail-sitters offer a simpler airframe than
 many other eVTOL classes. Compared with tilt-rotor or dual-system
 eVTOLs, tail-sitter eVTOLs remove tilting mechanisms and redundant
@@ -190,6 +207,48 @@ during transition can excite propeller vibration \citep{yang2024}.
   one loop rather than treating configuration choice and transition
   performance separately \citep{kaneko2024}.
 \end{itemize}
+
+Two further strands of the recent AIAA literature bear directly on
+the methodological questions of this paper. The first is model
+fidelity: comparisons of aerodynamic models for optimizing
+tail-sitter takeoff and transition show that the required fidelity
+depends on the question asked of the model \citep{anderson2021},
+multi-fidelity analysis of the hover-to-cruise transition quantifies
+what low-order models miss in the wake-dominated mid-transition
+regime \citep{arias2025}, and integrated
+modeling--simulation--control studies of small tail-sitter platforms
+illustrate the level of longitudinal-dynamics representation such
+vehicles ultimately need \citep{pricker2023}. The second is
+operational robustness: transition and re-transition can be defined
+as robust, repeatable procedures with explicit corridors and margins
+rather than as isolated maneuvers \citep{marvakov2021}; robust
+control addresses the large aerodynamic-coefficient changes between
+hover, transition, and cruise \citep{kumar2024}; systematic
+transition strategies for the closely related tilt-wing class
+provide a methodological basis for corridor definition
+\citep{may2024}; and descent-rate limits against vortex-ring-state
+encounters constrain VTOL landing trajectories \citep{jeong2024}.
+
+The single-duct configuration studied here also carries its own
+aerodynamic literature. A dedicated transition method exists for
+ducted-fan tail-sitter UAVs \citep{zhang2013}, and nondimensional
+models of ducted-fan aerodynamics capture the duct--rotor--airframe
+interaction in a form that scales across the flight envelope
+\citep{ohanian2012}. Hover performance --- duct lift share, inlet
+and diffuser effects, rotor loading --- has been characterized
+numerically \citep{sheng2015} and experimentally as a function of
+duct geometry \citep{dorfling2023}, and the rotor and duct have been
+treated as a single coupled, surrogate-assisted optimization problem
+\citep{qing2019} --- a direct methodological precedent for
+AI-assisted coupled sizing. Installation effects matter as well:
+embedding electric ducted fans close to lifting surfaces changes
+both fan and airframe behavior \citep{alabdali2025}; wake
+impingement on a nearby surface differs between ducted and unducted
+propulsors, directly relevant to a tail-sitter that takes off and
+lands with its duct axis normal to the ground \citep{kopperstad2025};
+and wing--propeller interaction experiments on hybrid VTOL
+configurations show that slipstream effects belong in the conceptual
+loop \citep{hrishikeshavan2013,hrishikeshavan2014}.
 
 Taken together, the literature supports an AI-assisted conceptual
 design methodology that augments physics-based analysis rather than

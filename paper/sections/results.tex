@@ -475,7 +475,7 @@ an \emph{energy} item --- 40\,s billed at hover power --- but not as a
 \emph{sizing constraint}. The tail-sitter literature is consistent that
 this is not a safe simplification. Feasible transition depends on
 actuator dynamics, rate limits, and time delay as well as on the
-conceptual parameters \citep{zhong2021,li2020}; the transition corridor
+conceptual parameters \citep{zhong2021,li2020,banazadeh2016}; the transition corridor
 widens with available propulsive power and narrows with weight
 \citep{tang2018}; and imposing a minimum-transition-time constraint
 inside the sizing loop has been shown to change the converged takeoff
@@ -489,7 +489,14 @@ transition-feasibility stage --- which the framework accommodates
 without structural change, as a further pipeline stage with its own
 pinned margin --- is the highest-value next increment to the model, and
 is a more informative admission than a generic appeal to fidelity: the
-coupling map states which box is empty. Finally, the
+coupling map states which box is empty. The ingredients for that
+stage exist in the literature: robust transition and re-transition
+procedures with explicit corridors \citep{marvakov2021}, a
+demonstrated transition method for ducted-fan tail-sitters
+\citep{zhang2013}, nondimensional ducted-fan aerodynamic models
+suitable for the corridor computation \citep{ohanian2012}, and
+guidance on the aerodynamic-model fidelity that computation needs
+\citep{anderson2021,arias2025}. Finally, the
 methodology's guardrails bound, but cannot eliminate, LLM
 fallibility: the protection is structural (nothing merges without
 passing pins, CI, and human review), and the residual risk
