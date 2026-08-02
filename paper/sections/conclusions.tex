@@ -14,6 +14,25 @@ analysis pipeline with typed hand-offs, pinned design-point regression
 tests with full-pipeline continuous integration, and architecture
 decision records with git-level provenance of AI contribution.
 
+Alongside the workflow, the paper contributes an integrative parameter
+model of electric VTOL UAV conceptual design: every design quantity is
+classified as a requirement, a free parameter, a coupled state
+variable, a derived quantity, or a constraint; the coupling map states
+which factors influence which and locates the two circular
+dependencies --- the mass closure and the stall-limited wing --- that
+must be resolved simultaneously; the first-order dimensioning relations
+that implement the map are given in full; and the constraint checks are
+organised into three deliberately distinct failure exits, separating a
+concept that does not close, a design that has drifted silently, and a
+margin that is unfavourable but documented. This model is what makes
+multidisciplinary change propagation a checkable operation rather than
+an act of memory, and it is the component of a heritage design
+capability that emerging drone organizations most conspicuously lack.
+Its practical force is visible in the case study's own history, where
+rotor diameter proved to be a mass parameter, battery internal
+resistance a mass parameter, and maximum lift coefficient a geometry
+parameter --- couplings that a sequential workflow reliably misses.
+
 Applied to the conceptual design of a small electric tail-sitter VTOL
 UAV, the methodology carried the program from mission requirements to
 a converged, commercially frozen 2.52\,kg design point --- sixteen
@@ -37,6 +56,24 @@ than as a source of engineering answers. The acceleration was used not
 to cut corners but to make honesty cheap --- model refinements that
 grew the design mass were adopted within days, and unfavorable margins
 are carried openly as standing findings with named retirement paths.
+
+Two consequences bear directly on practice. First, the framework
+delivers not only a shorter development cycle but a higher quality of
+work, because the dominant error mode of fast-moving programs --- a
+parameter updated in one place and not in the places that depend on it
+--- is removed from the space of possible outcomes rather than guarded
+against by diligence. The benefit is therefore largest not for teams
+with deep analysis heritage, whose main gain is speed, but for the far
+larger population of integration-driven drone developers, who are
+exposed precisely where the coupling map is dense and
+counter-intuitive. Second, because the final pipeline stage regenerates
+the design point, the margins table, the frozen hardware list, and
+every standing finding on every run, the methodology doubles as an
+instrument for formal design review: a package that cannot be stale by
+construction, in which unmet requirements are structurally un-hideable,
+every number is one step from the parameter and equation that produced
+it, and a reviewer's alternative assumption can be re-converged during
+the review rather than deferred as an action item.
 
 Future work proceeds along the hand-offs the methodology already
 exposes: closing the external vortex-lattice/blade-element and CFD

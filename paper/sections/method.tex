@@ -4,7 +4,15 @@
 The methodology's central idea is a strict division of labor between
 three actors, mediated by a version-controlled repository that is the
 single source of truth for the design
-(Fig.~\ref{fig:workflow}):
+(Fig.~\ref{fig:workflow}). Every artifact referred to in this section
+--- the configuration files, the physics library, the notebook
+pipeline, the decision records, the test suite, and the continuous
+integration workflows --- can be inspected in the case study's open
+repository at
+\url{https://github.com/onurtuncer/vbat-uav-notebooks}
+\citep{tuncer2026vbat}, so the methodology can be read against a
+working implementation rather than a description of one. The three
+actors are:
 
 \begin{enumerate}[nosep,label=(\roman*)]
 \item \textbf{Deterministic physics code} is the \emph{only} source of

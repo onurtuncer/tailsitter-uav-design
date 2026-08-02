@@ -99,7 +99,20 @@ framework is aircraft-independent and can be adapted to a wide range of
 aerospace platforms that require rapid, multidisciplinary conceptual
 development.
 
-As a second contribution, the paper demonstrates the practical
+As a second contribution, the paper presents an \emph{integrative
+parameter model} of electric VTOL UAV conceptual design: an explicit
+classification of every design quantity into requirements, free
+parameters, coupled state variables, derived quantities, and
+constraints; a coupling map showing which factors influence which and
+where the circular dependencies lie; the complete set of first-order
+dimensioning relations that implement it; and the flow of constraint
+and verification checks through which each iteration must pass. This is
+the part of a heritage design capability that emerging drone
+organizations most conspicuously lack, and it is what makes
+multidisciplinary change propagation --- by a human or by an agent ---
+a checkable operation rather than an act of memory.
+
+As a third contribution, the paper demonstrates the practical
 implementation of the methodology through the conceptual design of a
 tail-sitter VTOL UAV, resulting in a complete preliminary sizing
 procedure, propulsion system selection, onboard equipment architecture,
@@ -117,6 +130,8 @@ The remainder of the paper is organized as follows.
 Section~\ref{sec:related} reviews AI applications in conceptual
 aircraft and UAV design and motivates the tail-sitter as a validation
 case. Section~\ref{sec:method} presents the methodology.
-Section~\ref{sec:results} reports the case study results and process
-metrics and discusses them against the research question.
-Section~\ref{sec:conclusions} concludes.
+Section~\ref{sec:model} presents the integrative parameter model, the
+dimensioning relations, and the constraint check flow on which the
+methodology operates. Section~\ref{sec:results} reports the case study
+results and process metrics and discusses them against the research
+question. Section~\ref{sec:conclusions} concludes.
