@@ -39,10 +39,10 @@ Design point (ADR-0003 prop-in-duct amendment, 2026-07-12): MTOW
 
 | Path | What it is |
 |---|---|
-| `airframes/22100_vbat_tailsitter` | Hardware airframe file (custom start script for the PX4 ROMFS, `init.d/airframes` style). Source of truth for all tunable params. |
+| `airframes/22100_edf_tailsitter` | Hardware airframe file (custom start script for the PX4 ROMFS, `init.d/airframes` style). Source of truth for all tunable params. |
 | `sitl/daveml_spec.md` | Contract for the CFD-derived DAVE-ML model set (`out/daveml/*.dml`) consumed by Aetherion — grids, frames, check-cases, validation gates. |
-| `sitl/airframes/4801_gz_vbat_tailsitter` | SITL (Gazebo `gz`) airframe file, `init.d-posix` style. Param values are kept in sync with the hardware file by hand. |
-| `sitl/models/vbat_tailsitter/` | Gazebo model (`model.sdf` + `model.config`) — **integration smoke checks and visualisation only**, not a trusted plant. Inertia from `out/mass_properties.yaml`, geometry from `out/fuselage.yaml` / `out/control_vanes.yaml`. |
+| `sitl/airframes/4801_gz_edf_tailsitter` | SITL (Gazebo `gz`) airframe file, `init.d-posix` style. Param values are kept in sync with the hardware file by hand. |
+| `sitl/models/edf_tailsitter/` | Gazebo model (`model.sdf` + `model.config`) — **integration smoke checks and visualisation only**, not a trusted plant. Inertia from `out/mass_properties.yaml`, geometry from `out/fuselage.yaml` / `out/control_vanes.yaml`. |
 
 The PX4 lockstep bridge and sensor models live in the Aetherion
 repository; this repo only produces the `.dml` inputs and the PX4
@@ -86,7 +86,7 @@ parameter set.
 
 **SITL against Aetherion (the trusted path, once the bridge exists):**
 build the Aetherion PX4 bridge pointing at `out/daveml/`, start PX4 with
-no built-in simulator (`make px4_sitl none_vbat_tailsitter` — external
+no built-in simulator (`make px4_sitl none_edf_tailsitter` — external
 sim connects on TCP 4560 in lockstep), then launch the bridge. Exact
 invocation is defined by the bridge in the Aetherion repo.
 
@@ -96,13 +96,13 @@ dynamics; Linux, PX4-Autopilot checkout, Gazebo Harmonic):
 ```sh
 # make the model and airframe visible to the PX4 build
 export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/path/to/tailsitter-uav-design/px4/sitl/models
-cp px4/sitl/airframes/4801_gz_vbat_tailsitter \
+cp px4/sitl/airframes/4801_gz_edf_tailsitter \
    PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/
 # add it to that directory's CMakeLists.txt, then:
-make px4_sitl gz_vbat_tailsitter
+make px4_sitl gz_edf_tailsitter
 ```
 
-**Hardware:** copy `airframes/22100_vbat_tailsitter` into
+**Hardware:** copy `airframes/22100_edf_tailsitter` into
 `ROMFS/px4fmu_common/init.d/airframes/` of a PX4 source build (register
 it in the CMakeLists), or replay the same `param set-default` lines as a
 QGroundControl parameter import after selecting a generic VTOL

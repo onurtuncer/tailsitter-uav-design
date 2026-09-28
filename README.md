@@ -199,7 +199,7 @@ jupyter lab
 Run the notebooks top-to-bottom **in this order** (each one writes YAML
 handoff files to `out/` that the next one reads):
 
-1. `notebooks/vbat_conceptual_design.ipynb` — mission sizing & mass closure
+1. `notebooks/tailsitter_conceptual_design.ipynb` — mission sizing & mass closure
 2. `notebooks/wing_design.ipynb` — airfoil selection & wing design
 3. `notebooks/control_vane_design.ipynb` — control vane sizing
 4. `notebooks/fuselage_design.ipynb` — fuselage layout & drag trade (reads the vane results)

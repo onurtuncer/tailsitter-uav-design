@@ -24,7 +24,7 @@ REPO = Path(__file__).resolve().parents[3]
 # CI dependency order (design-pipeline.yml); each notebook reads the
 # out/*.yaml handoffs written by the ones before it.
 NOTEBOOKS = [
-    "vbat_conceptual_design",
+    "tailsitter_conceptual_design",
     "wing_design",
     "control_vane_design",
     "aileron_design",

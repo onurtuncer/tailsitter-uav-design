@@ -89,7 +89,7 @@ landed as separate reviewable PRs over three days — jet-vane control
 surfaces, wing/duct-jet lattice binding, the fuselage body of
 revolution, BEMT blade count, control-surface deflection ranges, and
 finally the wing/body placement anchor that fixed a real solver-side
-overlap bug. No VBAT design-point change; schema/exporter only.
+overlap bug. No design-point change; schema/exporter only.
 
 ### Fixed
 
@@ -367,7 +367,7 @@ moves.
   light implementation.** The only COTS fan at the frozen diameter is the
   Schübeler DS-215 heavy-lift family; fan + lightest plausible motor land
   ~6× over the propulsion allocation (−1069 g). A COTS 3-blade prop in
-  the airframe duct (V-BAT-like) is ~40× lighter but exists at
+  the airframe duct (prop-in-duct) is ~40× lighter but exists at
   178/203 mm, not 195 mm — kept visible as a diameter-only rejection
   because adopting it means moving `D_rotor_m`, re-converging, and
   amending ADR-0003. Second finding: the lightest PX4 stack overruns the
@@ -592,7 +592,7 @@ hatch, two-piece wing) needed to actually build and iterate it.
 ## [0.1.0] — 2026-07-09
 
 First tagged design snapshot of the electric tail-sitter VTOL UAV
-(V-BAT-like, single EDF, jet vanes). Establishes the full one-way design
+(single EDF, jet vanes). Establishes the full one-way design
 pipeline — `config/*.yaml` → `src/conceptual_design/` (all physics) →
 `notebooks/` (orchestrate) → `out/` (handoffs) → `cfd/` (consumers) — and a
 converged conceptual design point.
@@ -607,7 +607,7 @@ converged conceptual design point.
 
 ### Pipeline (8 notebooks, executed in dependency order)
 
-1. `vbat_conceptual_design` — mission sizing, mass closure.
+1. `tailsitter_conceptual_design` — mission sizing, mass closure.
 2. `wing_design` — airfoil selection → `out/airfoil.yaml`.
 3. `control_vane_design` — jet vanes → `out/control_vanes.yaml`.
 4. `aileron_design` — cruise-phase roll backup → `out/aileron.yaml`.

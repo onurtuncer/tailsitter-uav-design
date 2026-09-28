@@ -72,7 +72,7 @@ itself as the tool-neutral exchange format between the two.
    - Aetherion loads them through its `Serialization/DAVEML` readers and
      exposes the plant to PX4 over the simulator-MAVLink **lockstep**
      interface (TCP 4560: `HIL_ACTUATOR_CONTROLS` in;
-     `HIL_SENSOR`/`HIL_GPS`/… out). The bridge, sensor models, V-BAT
+     `HIL_SENSOR`/`HIL_GPS`/… out). The bridge, sensor models, tail-sitter
      plant assembly, and control-law design live in a dedicated
      flight-control repository (planned, unnamed yet) that consumes
      Aetherion as a C++ library — Aetherion itself stays
@@ -116,17 +116,17 @@ itself as the tool-neutral exchange format between the two.
   (a) a parametric CFD sweep runner + post-processing to force/coefficient
   tables (this repo, `cfd/`); (b) a DAVE-ML generator writing
   `out/daveml/*.dml` per `px4/sitl/daveml_spec.md` (this repo, new
-  pipeline stage); (c) the dedicated V-BAT flight-control repo — plant
+  pipeline stage); (c) the dedicated tail-sitter flight-control repo — plant
   assembly on Aetherion, PX4 lockstep bridge + sensor models
   (IMU/mag/baro/GPS with noise, optionally the 211 Hz 1/rev line),
-  trim/linearization, control-law design; (d) V-BAT trim/response
+  trim/linearization, control-law design; (d) tail-sitter trim/response
   check-cases in Aetherion's validation style. Until (a)–(c) exist,
   SITL results carry an asterisk. The flight-control repo consumes
   tagged release snapshots of this repo (never a working tree) and
   seeds the `px4/` gain parameters here, citing its own release tag.
 - Aetherion's typed `DAVEMLAeroModel::Inputs` is F-16-shaped (el/ail/rdr);
-  the V-BAT model (4 vane deflections + jet state) is driven through the
-  generic `evaluateRaw` map interface, or a typed V-BAT policy is added
+  the tail-sitter model (4 vane deflections + jet state) is driven through the
+  generic `evaluateRaw` map interface, or a typed tail-sitter policy is added
   Aetherion-side — either way, no change to this repo's handoffs.
 - In hover `q_∞ → 0`, so classic coefficient normalisation blows up:
   the airframe table is coefficient-form (valid above a few m/s) while

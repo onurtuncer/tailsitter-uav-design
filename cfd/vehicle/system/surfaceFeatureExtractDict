@@ -10,7 +10,7 @@ FoamFile
     object      surfaceFeatureExtractDict;
 }
 
-vbat.stl
+tailsitter.stl
 {
     extractionMethod    extractFromSurface;
     includedAngle       150;

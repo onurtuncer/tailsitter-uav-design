@@ -5,7 +5,7 @@ foam2dml.py -- Export an OpenFOAM AoA polar to DAVE-ML 2.0 RC.
 Reads postProcessing/forceCoeffs/*/coefficient.dat from each polar/aoa_*/
 run, averages the converged tail of the iteration history, and writes a
 DAVE-ML file (gridded tables over angle of attack) suitable for the
-Aetherion DAVEml loader -- the aero sibling of vbat_aero.dml.
+Aetherion DAVEml loader -- the aero sibling of tailsitter_aero.dml.
 
 Contents of the generated file:
   * variableDefs : angleOfAttack [deg] input; CL, CD, Cm outputs
@@ -20,7 +20,7 @@ Reference quantities match Allrun.case:
   MAC = 0.16704 m, S_ref = 0.16740 m2, CofR = CG (-0.23402 0 0), FRD axes.
 
 Usage:
-  foam2dml.py --polar-dir polar [--avg-frac 0.25] [--out vbat_aero_cfd.dml]
+  foam2dml.py --polar-dir polar [--avg-frac 0.25] [--out tailsitter_aero_cfd.dml]
               [--plot]
 Also accepts a single-run case dir via --case (one AoA, from run_meta.yaml).
 """
@@ -164,7 +164,7 @@ def write_dml(points, drv, out, v_mps, avg_frac):
     w(f'<DAVEfunc xmlns="{DAVE_NS}">')
 
     # ---- header ----
-    w('  <fileHeader name="vbat_aero_cfd">')
+    w('  <fileHeader name="tailsitter_aero_cfd">')
     w('    <author name="foam2dml exporter" org="ITU Aeronautical Engineering"/>')
     w(f'    <fileCreationDate date="{today}"/>')
     w('    <description>')
@@ -179,7 +179,7 @@ def write_dml(points, drv, out, v_mps, avg_frac):
         f"|alpha| <= 8 deg): CL_alpha = {fmt(drv['CL_alpha'],4)} /rad, "
         f"Cm_alpha = {fmt(drv['Cm_alpha'],4)} /rad, "
         f"CD0 = {fmt(drv['CD0'],4)}, k = {fmt(drv['k'],4)}. "
-        f"Companion to vbat_propulsion.dml and vbat_controls.dml."))
+        f"Companion to tailsitter_propulsion.dml and tailsitter_controls.dml."))
     w('    </description>')
     w('  </fileHeader>')
 
@@ -264,7 +264,7 @@ def main():
     ap.add_argument("--case", help="single-run case directory instead")
     ap.add_argument("--avg-frac", type=float, default=0.25,
                     help="fraction of final iterations to average")
-    ap.add_argument("--out", default="vbat_aero_cfd.dml")
+    ap.add_argument("--out", default="tailsitter_aero_cfd.dml")
     ap.add_argument("--plot", action="store_true",
                     help="write polar plots next to the .dml")
     args = ap.parse_args()

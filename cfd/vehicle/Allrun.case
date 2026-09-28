@@ -81,7 +81,7 @@ RAS
 EOF
 
 # --- 0/ fields --------------------------------------------------------------
-# Patches from meshing stage: inlet (+x), outlet (-x), farfield, vbat (wall)
+# Patches from meshing stage: inlet (+x), outlet (-x), farfield, tailsitter (wall)
 
 cat > 0/U << EOF
 FoamFile { version 2.0; format ascii; class volVectorField; object U; }
@@ -92,7 +92,7 @@ boundaryField
     inlet     { type freestreamVelocity; freestreamValue uniform ($UX $UY $UZ); }
     outlet    { type freestreamVelocity; freestreamValue uniform ($UX $UY $UZ); }
     farfield  { type freestreamVelocity; freestreamValue uniform ($UX $UY $UZ); }
-    vbat      { type noSlip; }
+    tailsitter      { type noSlip; }
 }
 EOF
 
@@ -105,7 +105,7 @@ boundaryField
     inlet     { type freestreamPressure; freestreamValue uniform 0; }
     outlet    { type freestreamPressure; freestreamValue uniform 0; }
     farfield  { type freestreamPressure; freestreamValue uniform 0; }
-    vbat      { type zeroGradient; }
+    tailsitter      { type zeroGradient; }
 }
 EOF
 
@@ -118,7 +118,7 @@ boundaryField
     inlet     { type turbulentIntensityKineticEnergyInlet; intensity 0.01; value uniform $K; }
     outlet    { type inletOutlet; inletValue uniform $K; value uniform $K; }
     farfield  { type inletOutlet; inletValue uniform $K; value uniform $K; }
-    vbat      { type kqRWallFunction; value uniform $K; }
+    tailsitter      { type kqRWallFunction; value uniform $K; }
 }
 EOF
 
@@ -131,7 +131,7 @@ boundaryField
     inlet     { type fixedValue; value uniform $OMEGA; }
     outlet    { type inletOutlet; inletValue uniform $OMEGA; value uniform $OMEGA; }
     farfield  { type inletOutlet; inletValue uniform $OMEGA; value uniform $OMEGA; }
-    vbat      { type omegaWallFunction; value uniform $OMEGA; }
+    tailsitter      { type omegaWallFunction; value uniform $OMEGA; }
 }
 EOF
 
@@ -146,7 +146,7 @@ boundaryField
     farfield  { type calculated; value uniform 0; }
     // nutUSpaldingWallFunction: valid across y+ ranges (layers may vary
     // over duct/vane region)
-    vbat      { type nutUSpaldingWallFunction; value uniform 0; }
+    tailsitter      { type nutUSpaldingWallFunction; value uniform 0; }
 }
 EOF
 
@@ -175,7 +175,7 @@ functions
         libs            (forces);
         writeControl    timeStep;
         writeInterval   1;
-        patches         (vbat);
+        patches         (tailsitter);
         rho             rhoInf;
         rhoInf          1.225;
         // Body FRD (z down): lift is "up" = -z at AoA=0; directions

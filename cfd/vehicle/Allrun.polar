@@ -50,4 +50,4 @@ done
 
 echo
 echo ">> Sweep complete. Export DAVE-ML:"
-echo "     python3 ../postprocess/foam2dml.py --polar-dir polar --out vbat_aero_cfd.dml --plot"
+echo "     python3 ../postprocess/foam2dml.py --polar-dir polar --out tailsitter_aero_cfd.dml --plot"

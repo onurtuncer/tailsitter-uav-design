@@ -20,7 +20,7 @@ env:
   # published index page both derive from this order. Adding a notebook
   # here is the ONLY edit needed for it to run and appear on Pages.
   NOTEBOOK_ORDER: >-
-    vbat_conceptual_design wing_design control_vane_design
+    tailsitter_conceptual_design wing_design control_vane_design
     aileron_design vibration_isolation fuselage_design
     thermal_design vehicle_solid_model aeolion_handoff mass_properties
     wiring_diagram cots_selection
