@@ -1,5 +1,5 @@
 """
-fuselage_design.py  --  Parametric Fuselage Sizing for the V-BAT Tail-Sitter
+fuselage_design.py  --  Parametric Fuselage Sizing for the Tail-Sitter UAV
 =============================================================================
 
 Sizes the fuselage of the electric tail-sitter from the converged mass

@@ -1,4 +1,4 @@
-# Airfoil selection configuration for the V-BAT tail-sitter.
+# Airfoil selection configuration for the tail-sitter.
 #
 # designation : NACA 4-digit airfoil to analyse.
 #   Format: "NACA MPXX" or just the 4 digits e.g. "2412".

@@ -1,5 +1,5 @@
 /*--------------------------------*- C++ -*----------------------------------*\
-| Background hex mesh for V-BAT tail-sitter external aero                     |
+| Background hex mesh for the tail-sitter external aero                       |
 | Geometry (metres, body FRD): nose x=0, tail x=-0.7126, span y=+/-0.501,     |
 | duct z=+/-0.151.  Freestream enters from +x (inlet), wake extends to -x.    |
 | Base cell = 0.25 m -> level 7 refinement = 1.95 mm at the surface.          |

@@ -1,6 +1,6 @@
 # CFD Cases (OpenFOAM)
 
-RANS (simpleFoam, k-omega SST) cases characterizing the V-BAT tail-sitter,
+RANS (simpleFoam, k-omega SST) cases characterizing the tail-sitter,
 using geometry and reference quantities produced by the notebooks
 (`out/cad/`, `out/fuselage.yaml`, `out/control_vanes.yaml`,
 `config/mission.yaml`). Tested against OpenFOAM.com v2306+.

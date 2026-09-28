@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# @name V-BAT-like single-EDF jet-vane tailsitter (Gazebo SITL)
+# @name Single-EDF jet-vane tailsitter (Gazebo SITL)
 # @type VTOL Tailsitter
 # @class VTOL
 #

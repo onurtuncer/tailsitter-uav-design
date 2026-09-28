@@ -1,5 +1,5 @@
 """
-models.py  --  Data-container dataclasses for the V-BAT conceptual sizing toolchain.
+models.py  --  Data-container dataclasses for the tail-sitter conceptual sizing toolchain.
 
 Every physical quantity lives here.  No physics equations, just structure.
 

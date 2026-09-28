@@ -1,4 +1,4 @@
-# Wing structural parameters for the V-BAT tail-sitter sizing study.
+# Wing structural parameters for the tail-sitter sizing study.
 # Used by the Raymer (default) or Nicolai empirical wing weight formula
 # in wing_sizing.py.
 #

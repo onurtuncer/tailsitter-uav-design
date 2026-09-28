@@ -48,7 +48,7 @@ class TestMtowFromComponents:
 
 @pytest.fixture
 def sizing_inputs():
-    """Representative V-BAT-scale inputs (mirrors the repo config values)."""
+    """Representative design-scale inputs (mirrors the repo config values)."""
     return dict(
         m_payload_kg=0.5,
         mission=Mission(t_hover=120, t_cruise=900, V_cruise=20.0,

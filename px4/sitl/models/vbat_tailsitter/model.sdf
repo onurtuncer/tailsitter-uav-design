@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  V-BAT-like single-EDF jet-vane tailsitter — Gazebo (gz) model.
+  Single-EDF jet-vane tailsitter — Gazebo (gz) model.
   DRAFT (ADR-0011).
 
   Frame: Gazebo FLU (x forward, y left, z up), model origin at the NOSE

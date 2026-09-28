@@ -230,7 +230,7 @@ def export_prop(prop_dir, avg_frac, out):
                  "the fuselage.yaml-sourced geometry -- re-run Allrun.prop")
 
     dml = Dml("vbat_propulsion_cfd",
-              "Installed thrust map of the V-BAT ducted fan from steady RANS "
+              "Installed thrust map of the tail-sitter ducted fan from steady RANS "
               "(OpenFOAM simpleFoam, k-omega SST) with a uniform actuator-"
               "disk momentum source " + geom_txt +
               "T_installed = T_disk + Fx(duct+centerbody): includes duct lip "

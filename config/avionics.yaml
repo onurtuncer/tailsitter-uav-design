@@ -1,5 +1,5 @@
 # Continuous non-propulsive electrical load ("hotel load") for the
-# V-BAT tail-sitter sizing study. Drawn for the ENTIRE mission and
+# tail-sitter sizing study. Drawn for the ENTIRE mission and
 # added to every phase power in the energy budget.
 #
 # P_hotel_W : continuous hotel load [W]

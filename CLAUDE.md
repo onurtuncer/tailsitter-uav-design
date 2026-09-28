@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Conceptual design study for a small electric tail-sitter VTOL UAV
-(V-BAT-like, single EDF, jet vanes). Python physics package + Jupyter
+(single EDF, jet vanes). Python physics package + Jupyter
 notebooks + CadQuery CAD + OpenFOAM CFD cases, all wired into CI.
 
 ## Architecture: the design pipeline

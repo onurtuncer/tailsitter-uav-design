@@ -169,7 +169,7 @@ def write_dml(points, drv, out, v_mps, avg_frac):
     w(f'    <fileCreationDate date="{today}"/>')
     w('    <description>')
     w(escape(
-        f"Static longitudinal aerodynamic coefficients of the V-BAT-like "
+        f"Static longitudinal aerodynamic coefficients of the "
         f"tail-sitter from steady RANS (OpenFOAM simpleFoam, k-omega SST). "
         f"Freestream {fmt(v_mps)} m/s (Re_MAC ~ {fmt(v_mps*0.16704/1.5e-5,3)}). "
         f"References: S_ref = 0.16740 m^2, MAC = 0.16704 m, moment reference "

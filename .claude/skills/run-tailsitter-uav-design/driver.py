@@ -1,4 +1,4 @@
-# Agent driver for the V-BAT conceptual-design pipeline.
+# Agent driver for the tail-sitter conceptual-design pipeline.
 #
 # The "app" here is a one-way design pipeline (config/ -> src/ ->
 # notebooks/ -> out/), so driving it means: run the sizing physics
@@ -6,7 +6,7 @@
 # (pipeline), and regression-check the resulting design point (test).
 #
 # Runs with the repo venv's python from the repo root:
-#   .venv/Scripts/python.exe .claude/skills/run-vbat-uav-notebooks/driver.py smoke
+#   .venv/Scripts/python.exe .claude/skills/run-tailsitter-uav-design/driver.py smoke
 #
 # Works on Windows (local 3.14 venv) and Linux (CI 3.12). On 3.14,
 # cadquery cannot import (no OCP wheel), so `pipeline` auto-skips

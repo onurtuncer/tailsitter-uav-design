@@ -663,16 +663,16 @@ converged conceptual design point.
   design point and cross-check `cfd/vehicle/Allrun.case`; `tests/test_geometry.py`
   guards the exported STL (watertight, mm units, span).
 
-[0.5.2]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.5.2
-[0.5.1]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.5.1
-[0.5.0]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.5.0
-[0.4.5]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.4.5
-[0.4.4]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.4.4
-[0.4.3]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.4.3
-[0.4.2]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.4.2
-[0.4.1]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.4.1
-[0.4.0]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.4.0
-[0.3.0]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.3.0
-[0.2.1]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.2.1
-[0.2.0]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.2.0
-[0.1.0]: https://github.com/onurtuncer/vbat-uav-notebooks/releases/tag/v0.1.0
+[0.5.2]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.5.2
+[0.5.1]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.5.1
+[0.5.0]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.5.0
+[0.4.5]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.4.5
+[0.4.4]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.4.4
+[0.4.3]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.4.3
+[0.4.2]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.4.2
+[0.4.1]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.4.1
+[0.4.0]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.4.0
+[0.3.0]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.3.0
+[0.2.1]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.2.1
+[0.2.0]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.2.0
+[0.1.0]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.1.0

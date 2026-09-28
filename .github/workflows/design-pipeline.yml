@@ -245,7 +245,7 @@ jobs:
           page = f"""<!DOCTYPE html>
           <html lang="en"><head><meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>V-BAT — Bill of Materials</title>
+          <title>Tail-Sitter UAV — Bill of Materials</title>
           <style>
             body {{ font-family: system-ui, sans-serif; max-width: 60rem;
                    margin: 3rem auto; padding: 0 1rem; }}
@@ -290,7 +290,7 @@ jobs:
           <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>V-BAT Tail-Sitter — Conceptual Design Report</title>
+            <title>Tail-Sitter UAV — Conceptual Design Report</title>
             <style>
               body {{ font-family: system-ui, sans-serif; max-width: 46rem;
                      margin: 3rem auto; padding: 0 1rem; line-height: 1.6; }}
@@ -299,7 +299,7 @@ jobs:
             </style>
           </head>
           <body>
-            <h1>Electric V-BAT-Like Tail-Sitter — Design Report</h1>
+            <h1>Electric Tail-Sitter UAV — Design Report</h1>
             <p>Generated end-to-end from <code>config/</code> by CI on every
                push to <code>main</code>.</p>
 
@@ -316,7 +316,7 @@ jobs:
           {nb_list}
             </ol>
 
-            <p><a href="https://github.com/onurtuncer/vbat-uav-notebooks">Source repository</a></p>
+            <p><a href="https://github.com/onurtuncer/tailsitter-uav-design">Source repository</a></p>
           </body>
           </html>"""
           pathlib.Path("site/index.html").write_text(page, encoding="utf-8")

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ---------------------------------------------------------------------------
-# Grid generator for the V-BAT tail-sitter (vbat-uav-notebooks).
+# Grid generator for the tail-sitter (tailsitter-uav-design).
 #
 #   ./Allrun.mesh [path/to/repo/root] [nProcs]   (default: ../.., this repo)
 #

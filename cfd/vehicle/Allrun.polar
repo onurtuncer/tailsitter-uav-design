@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ---------------------------------------------------------------------------
-# AoA polar sweep for the V-BAT case (run AFTER Allrun.mesh).
+# AoA polar sweep for the tail-sitter case (run AFTER Allrun.mesh).
 #
 #   ./Allrun.polar [-n nProcs] [-V speed] -- AOA1 AOA2 ...
 #   e.g.  ./Allrun.polar -n 8 -V 20 -- -4 -2 0 2 4 6 8 10 12

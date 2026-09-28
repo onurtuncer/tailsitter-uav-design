@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 step2print.py -- Produce per-part, 3D-print-ready STEP (and STL) files from
-the vbat-uav-notebooks assembly STEP.
+the tailsitter-uav-design assembly STEP.
 
 Reads out/cad/step/vbat_assembly.step via XCAF so part NAMES and instance
 counts survive: identical instances (leg_1..4, strut_1..4, vane_T/B/L/R)

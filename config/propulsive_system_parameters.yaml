@@ -1,4 +1,4 @@
-# Propulsive system parameters for the V-BAT tail-sitter sizing study.
+# Propulsive system parameters for the tail-sitter sizing study.
 #
 # For a tail-sitter the same motor/rotor serves both hover and cruise.
 # The rotor is a COTS 3-blade prop in the airframe duct (ADR-0003 as

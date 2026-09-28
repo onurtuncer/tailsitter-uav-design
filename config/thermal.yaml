@@ -1,4 +1,4 @@
-# Thermal-path parameters for the V-BAT tail-sitter (ADR-0009).
+# Thermal-path parameters for the tail-sitter (ADR-0009).
 # Used by thermal_design.py.
 #
 # Two heat-rejection paths, both realized as structure:

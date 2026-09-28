@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "vbat-conceptual-design"
+name = "tailsitter-conceptual-design"
 dynamic = ["version"]
 description = "First-principles conceptual sizing study for a small electric tail-sitter VTOL UAV"
 readme = "README.md"

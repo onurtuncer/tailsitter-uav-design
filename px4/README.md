@@ -95,7 +95,7 @@ dynamics; Linux, PX4-Autopilot checkout, Gazebo Harmonic):
 
 ```sh
 # make the model and airframe visible to the PX4 build
-export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/path/to/vbat-uav-notebooks/px4/sitl/models
+export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/path/to/tailsitter-uav-design/px4/sitl/models
 cp px4/sitl/airframes/4801_gz_vbat_tailsitter \
    PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/
 # add it to that directory's CMakeLists.txt, then:

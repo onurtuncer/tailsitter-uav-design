@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ---------------------------------------------------------------------------
-# Case setup for V-BAT tail-sitter external aero (run AFTER Allrun.mesh).
+# Case setup for the tail-sitter external aero (run AFTER Allrun.mesh).
 #
 #   ./Allrun.case [-a AOA_deg] [-V speed_m/s] [-n nProcs] [-s]
 #
@@ -12,7 +12,7 @@
 #
 # Solver: incompressible steady RANS, simpleFoam + k-omega SST.
 #
-# Reference data (derived from vbat-uav-notebooks outputs):
+# Reference data (derived from tailsitter-uav-design outputs):
 #   V_cruise = 20 m/s                      config/mission.yaml
 #   MAC      = 0.17712 m   = 4*(x_AC - x_LE), rectangular wing,
 #                            out/fuselage.yaml (0.25115 - 0.20687)
