@@ -118,3 +118,39 @@ def plot_ar_trade(AR_design, AR_values, CD0_total, CL_cruise, W_N, WS_design,
     plt.tight_layout()
     plt.savefig(save_path, dpi=150, bbox_inches='tight')
     return fig
+
+
+def plot_wing_comparison(perfs, V_values, rho, g, save_path):
+    """Required alpha vs V (from each wing's stall) and characteristic speeds."""
+    fig, axes = plt.subplots(1, 2, figsize=(13, 4.5))
+    colors = ['steelblue', 'seagreen', 'darkorange', 'tomato', 'purple']
+
+    ax = axes[0]
+    for p, c in zip(perfs, colors):
+        V = V_values[V_values >= p.V_S]
+        ax.plot(V, [p.required_alpha_deg(v, rho, g) for v in V], lw=2,
+                color=c, label=p.label)
+        ax.plot(p.V_MD_plus, p.alpha_MD_plus_deg, 'o', color=c, ms=7)
+    ax.set_xlabel('Airspeed  V  [m/s]')
+    ax.set_ylabel(r'Required $\alpha$  [deg]')
+    ax.set_title(r'Level-flight $\alpha$ (markers: $V_{MD}+\Delta V$)',
+                 fontweight='bold')
+    ax.legend(fontsize=9)
+
+    ax = axes[1]
+    names = ['V_S', '1.2 V_S', 'V_MP', 'V_MD', 'V_MD+dV']
+    attrs = ['V_S', 'V_1p2S', 'V_MP', 'V_MD', 'V_MD_plus']
+    x = np.arange(len(names))
+    width = 0.8 / len(perfs)
+    for i, (p, c) in enumerate(zip(perfs, colors)):
+        ax.bar(x + (i - (len(perfs) - 1) / 2) * width,
+               [getattr(p, a) for a in attrs], width, color=c, label=p.label)
+    ax.set_xticks(x)
+    ax.set_xticklabels(names)
+    ax.set_ylabel('Airspeed  [m/s]')
+    ax.set_title('Characteristic speeds', fontweight='bold')
+    ax.legend(fontsize=9)
+
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=150, bbox_inches='tight')
+    return fig

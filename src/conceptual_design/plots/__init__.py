@@ -27,6 +27,7 @@ from .wing import (
     plot_ar_trade,
     plot_drag_polar,
     plot_lift_curve,
+    plot_wing_comparison,
 )
 
 __all__ = [
@@ -49,4 +50,5 @@ __all__ = [
     "plot_vane_authority",
     "plot_vane_geometry",
     "plot_vtol_power_analysis",
+    "plot_wing_comparison",
 ]

@@ -59,11 +59,12 @@ class TestAirfoil:
     def test_design_point(self, airfoil):
         # NACA 4412 re-selection (ADR-0015): with the stall-limited
         # sizing honest (v0.5.0), the 4412's section lift shrinks the
-        # wing and puts cruise CL 0.535 near the polar optimum.
+        # wing and puts cruise CL 0.535 near the polar optimum. L/D 13.44
+        # with the fixed body drag area (ADR-0019; 13.35 before).
         assert airfoil["designation"] == "NACA 4412"
         assert airfoil["tc_ratio"] == pytest.approx(0.12, rel=1e-3)
         assert airfoil["CL_max_3D"] == pytest.approx(1.4886, rel=1e-2)
-        assert airfoil["LD_cruise"] == pytest.approx(13.35, rel=1e-2)
+        assert airfoil["LD_cruise"] == pytest.approx(13.44, rel=1e-3)
         assert airfoil["e_oswald"] == pytest.approx(0.8691, rel=1e-2)
 
 

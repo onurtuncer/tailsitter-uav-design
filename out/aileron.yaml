@@ -17,8 +17,8 @@ q_cruise_Pa: 245.0
 F_aileron_design_N: 0.12115
 M_roll_design_Nm: 0.12105
 ddot_roll_aileron_deg_s2: 484.984
-ddot_roll_vane_cruise_deg_s2: 50.014
-ddot_roll_total_cruise_deg_s2: 534.998
+ddot_roll_vane_cruise_deg_s2: 49.679
+ddot_roll_total_cruise_deg_s2: 534.663
 ddot_min_deg_s2: 30.0
 cruise_authority_ok: true
 M_hinge_max_Nmm: 2.5755

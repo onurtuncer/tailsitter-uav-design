@@ -26,8 +26,26 @@
 #                   stiff wing with standard carbon tube spars.
 #                   Cl_max ~ 1.44, slightly more profile drag than 2412.
 #
-# CD0_fuselage : fuselage + interference + misc drag contribution to CD0 [-]
-#   Typically 0.008..0.015 for a clean small UAV body.
+# f_body_m2    : fuselage + interference + misc equivalent flat-plate drag
+#   area [m^2], held FIXED across wing sizes (ADR-0019, 2026-09-17
+#   co-author wing study "NACA karsilastirma 3"): CD0_total =
+#   Cd0_section + f_body/S. The earlier bookkeeping added a constant
+#   CD0_fuselage = 0.010 referenced to whichever wing was evaluated, which
+#   scaled the body drag with S. 0.001834 m^2 = that 0.010 referenced to
+#   the study's reference wing A (the pre-ADR-0015 NACA 2412, 0.1834 m^2),
+#   so the A wing's drag is unchanged by the switch.
+#
+# wing_comparison : candidate wings for the NB2 study comparison. The
+#   converged design-point wing is always added by the notebook as the
+#   baseline; the entries here are the alternatives, evaluated at their
+#   own weight (Raymer wing-mass delta added on top of the design MTOW).
+#   A = pre-ADR-0015 NACA 2412 wing (v0.5.0), C = the co-author's
+#   proposed larger/higher-AR NACA 4412 wing.
+#   V_ref_m_s : common comparison speed for the drag breakdown [m/s]
+#               (18 m/s = the study's comparison speed, near every
+#               candidate's V_MD).
+#   dV_MD_m_s : operating-speed offset above V_MD at which the required
+#               angle of attack is reported (the study's V_MD + 1) [m/s].
 #
 # n_coords     : number of coordinate points per surface for the .dat file.
 
@@ -42,5 +60,11 @@
 # Re ~ 1.4e5 near stall (low-Re erosion -- validate before freezing
 # the wing tooling).
 designation: NACA 4412
-CD0_fuselage: 0.010
+f_body_m2: 0.001834
+wing_comparison:
+  V_ref_m_s: 18.0
+  dV_MD_m_s: 1.0
+  candidates:
+    - {label: "A -- pre-ADR-0015 2412", designation: NACA 2412, S_m2: 0.1834, AR: 6.0}
+    - {label: "C -- co-author 4412",    designation: NACA 4412, S_m2: 0.2100, AR: 6.5}
 n_coords: 200

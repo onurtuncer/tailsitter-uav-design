@@ -302,6 +302,46 @@ def print_wing_card(af, wing, aero, ws, M, P, WS_design, V_stall,
     print("+" + "="*56 + "+")
 
 
+def print_wing_comparison(perfs) -> None:
+    """Side-by-side candidate-wing table (ADR-0019 study bookkeeping)."""
+    w = 13
+    def row(name, fmt, attr, scale=1.0):
+        vals = "".join(f"{format(getattr(p, attr) * scale, fmt):>{w}}" for p in perfs)
+        print(f"  {name:<24}{vals}")
+    print(f"  {'':<24}" + "".join(f"{p.label.split(' --')[0]:>{w}}" for p in perfs))
+    print(f"  {'airfoil':<24}" + "".join(f"{p.designation:>{w}}" for p in perfs))
+    print("  " + "-" * (24 + w * len(perfs)))
+    row("S  [m^2]",              ".4f", "S_m2")
+    row("AR  [-]",               ".2f", "AR")
+    row("span b  [m]",           ".3f", "b_m")
+    row("mean chord  [m]",       ".4f", "chord_m")
+    row("wing mass  [g]",        ".1f", "m_wing_kg", 1e3)
+    row("  vs design wing  [g]", "+.1f", "dm_wing_kg", 1e3)
+    row("corrected MTOW  [kg]",  ".4f", "MTOW_kg")
+    row("W/S  [N/m^2]",          ".2f", "WS_N_m2")
+    row("CL_max,3D  [-]",        ".4f", "CL_max_3D")
+    row("Oswald e  [-]",         ".4f", "e_oswald")
+    row("CD0_eff  [-]",          ".5f", "CD0_eff")
+    print("  " + "-" * (24 + w * len(perfs)))
+    row("V_S  [m/s]",            ".2f", "V_S")
+    row("1.2 V_S  [m/s]",        ".2f", "V_1p2S")
+    row("V_MP  [m/s]",           ".2f", "V_MP")
+    row("V_MD  [m/s]",           ".2f", "V_MD")
+    row("V_MD + dV  [m/s]",      ".2f", "V_MD_plus")
+    row("alpha @ V_MD+dV  [deg]", ".2f", "alpha_MD_plus_deg")
+    row("(L/D)_max  [-]",        ".2f", "LD_max")
+    row("P_min (aero)  [W]",     ".2f", "P_min_W")
+    print("  " + "-" * (24 + w * len(perfs)))
+    V = perfs[0].V_ref
+    row(f"D_parasite @{V:.0f}  [N]",  ".3f", "D_parasite_ref_N")
+    row(f"D_induced @{V:.0f}  [N]",   ".3f", "D_induced_ref_N")
+    row(f"D_total @{V:.0f}  [N]",     ".3f", "D_total_ref_N")
+    row(f"P = D*V @{V:.0f}  [W]",     ".2f", "P_ref_W")
+    row(f"alpha @{V:.0f}  [deg]",     ".2f", "alpha_ref_deg")
+    print("\n  Aerodynamic power only (no propulsor/ESC efficiency); alpha is the")
+    print("  wing chord-line angle of attack (linear CL-alpha, no incidence).")
+
+
 # =====================================================================
 #  NB3 -- control vanes
 # =====================================================================

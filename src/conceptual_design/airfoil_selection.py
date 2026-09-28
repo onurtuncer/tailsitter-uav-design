@@ -80,7 +80,9 @@ SECTION ZERO-LIFT DRAG (profile drag)
 
     Lift-to-drag ratio:
         L/D = CL_cruise / (CD0_total + k*CL_cruise^2)
-        CD0_total = fuselage + wing profile drag contributions
+        CD0_total = Cd0_section + f_body / S
+    The fuselage enters as a fixed equivalent flat-plate drag area f_body
+    [m^2] (ADR-0019), so a larger wing does not inflate the body drag.
 
 OSWALD EFFICIENCY
     Raymer empirical (straight wing, eq. 3-5):
@@ -467,9 +469,10 @@ def analyse_airfoil(
     WS_N_m2:      float,
     V_cruise:     float,
     V_stall:      float,
+    S_wing_m2:    float,
+    f_body_m2:    float,
     rho:          float  = 1.225,
     sweep_c4_rad: float  = 0.0,
-    CD0_fuselage: float  = 0.010,   # fuselage + misc drag contribution to CD0
 ) -> AirfoilResult:
     """
     Full airfoil analysis and 3D wing performance estimate.
@@ -481,9 +484,10 @@ def analyse_airfoil(
     WS_N_m2      : design wing loading             [N/m^2]
     V_cruise     : cruise airspeed                 [m/s]
     V_stall      : required stall speed            [m/s]
+    S_wing_m2    : wing planform area              [m^2]
+    f_body_m2    : fuselage equivalent drag area   [m^2]
     rho          : air density                     [kg/m^3]
     sweep_c4_rad : quarter-chord sweep angle       [rad]
-    CD0_fuselage : fuselage + misc CD0 contribution[-]
 
     Returns
     -------
@@ -503,7 +507,7 @@ def analyse_airfoil(
     CLa_3D  = wing_CL_alpha(Cl_a, AR, e)
     CLmax3D = wing_CL_max(Cl_max2D, sweep_c4_rad)
     k       = 1.0 / (math.pi * AR * e)
-    CD0_tot = Cd0_sec + CD0_fuselage
+    CD0_tot = Cd0_sec + f_body_m2 / S_wing_m2
     CL_cr, CD_cr, LD_cr = wing_cruise_LD(WS_N_m2, rho, V_cruise, CD0_tot, AR, e)
 
     # -- constraints --
@@ -663,6 +667,8 @@ def compare_airfoils(
     WS_N_m2:      float,
     V_cruise:     float,
     V_stall:      float,
+    S_wing_m2:    float,
+    f_body_m2:    float,
     rho:          float = 1.225,
     sweep_c4_rad: float = 0.0,
 ) -> None:
@@ -670,7 +676,8 @@ def compare_airfoils(
     Print a side-by-side comparison table for a list of airfoil designations.
     """
     results = [
-        analyse_airfoil(d, AR, WS_N_m2, V_cruise, V_stall, rho, sweep_c4_rad)
+        analyse_airfoil(d, AR, WS_N_m2, V_cruise, V_stall, S_wing_m2,
+                        f_body_m2, rho, sweep_c4_rad)
         for d in candidates
     ]
 
