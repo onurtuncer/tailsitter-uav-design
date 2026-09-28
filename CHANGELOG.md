@@ -9,8 +9,28 @@ is tagged.
 
 ## [Unreleased]
 
+## [0.5.3] — 2026-09-28
+
+Minor design-point change: NB2 now holds the fuselage drag as a fixed
+equivalent area (ADR-0019), so the design-point cruise L/D goes from 13.35
+to 13.44. MTOW, hover power and wing geometry do not change. This release
+also adds a candidate-wing comparison to NB2, Aeolion handoff schemas
+1.6.0–1.8.0, the Clark Y propeller section and the NB16 mission profile.
+
 ### Changed
 
+- **NB2 body drag held as a fixed equivalent area** (ADR-0019, from the
+  2026-09-17 co-author wing study): `config/airfoil_selection.yaml`
+  `CD0_fuselage = 0.010` is replaced by `f_body_m2 = 0.001834`, so
+  `CD0 = Cd0_w + f_body/S`. The old constant coefficient was referenced
+  to whichever wing was being evaluated, so the fuselage drag grew with
+  the wing. The design-point `LD_cruise` goes from 13.35 to 13.44 (pin
+  updated). The cruise jet-vane roll backup goes from 50.0 to
+  49.7 deg/s² (requirement 30). MTOW, hover power, the wing geometry and
+  the NACA 4412 section are unchanged.
+- **The methodology paper moved to the `onurtuncer/UAVPapers`
+  repository** (with its history and CI build). `paper/`, its workflow
+  and the release PDF attachment are removed here.
 - **Aeolion handoff moved to its own notebook** (ADR-0018): pipeline is
   now sixteen notebooks — `aeolion_handoff` inserted as NB9,
   `mass_properties` through `design_summary` renumbered NB10–NB16. The
@@ -24,6 +44,20 @@ is tagged.
 
 ### Added
 
+- **Candidate-wing comparison in NB2** (ADR-0019): new module
+  `wing_comparison.py` and NB2 §10. The design wing is compared with the
+  pre-ADR-0015 NACA 2412 wing and the co-author's proposed NACA 4412 wing
+  (S 0.21 m², AR 6.5), each at its own weight. The comparison reports
+  V_S, 1.2·V_S, V_MP, V_MD, α at V_MD+1, (L/D)max, minimum aerodynamic
+  power and the drag breakdown at 18 m/s. It is reporting only and does
+  not resize the wing. Two deliberate differences from the study: NB2
+  uses Raymer's e(AR), and it computes C's α at V_MD+1 with C's own
+  AR-6.5 lift slope (3.63°, where the study reported 3.78°).
+- **Mission profile and battery-state track in NB16**: range, cruise
+  altitude, vertical climb and endurance, with an altitude/time sketch
+  that tracks pack state of charge leg by leg (the cruise leg is drawn
+  with a compressed time axis). Presentation only; the leg energies are
+  asserted to re-sum to the mass closure's values.
 - **Aeolion handoff schema 1.8.0** (ADR-0016): new top-level `duct`
   block — the EDF shroud as an annulus of revolution about the body
   x-axis (`inner_diameter`, `outer_diameter`, `chord`) with explicit
@@ -663,6 +697,7 @@ converged conceptual design point.
   design point and cross-check `cfd/vehicle/Allrun.case`; `tests/test_geometry.py`
   guards the exported STL (watertight, mm units, span).
 
+[0.5.3]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.5.3
 [0.5.2]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.5.2
 [0.5.1]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.5.1
 [0.5.0]: https://github.com/onurtuncer/tailsitter-uav-design/releases/tag/v0.5.0
