@@ -55,7 +55,7 @@ same property `wiring_diagram` (NB11) already has.
 - Pipeline is now sixteen notebooks. `CLAUDE.md`,
   `.github/workflows/design-pipeline.yml`'s `NOTEBOOK_ORDER`,
   `.github/workflows/release.yml`'s minimal notebook list, and
-  `.claude/skills/run-vbat-uav-notebooks/driver.py`'s `NOTEBOOKS` list
+  `.claude/skills/run-tailsitter-uav-design/driver.py`'s `NOTEBOOKS` list
   all updated in the same commit.
 - `out/cad/aeolion_geometry.json`'s content is unaffected by the
   split — same inputs, same code, same `design_id` — verified by

@@ -1,4 +1,4 @@
-# Mission profile for the electric V-BAT-like tail-sitter (COTS 195 mm EDF).
+# Mission profile for the electric tail-sitter (COTS 195 mm EDF).
 #
 # Total mission = t_hover + t_transition + t_cruise
 #              = 120 + 40 + 900 s = 17.7 min   (target band: 15-20 min)

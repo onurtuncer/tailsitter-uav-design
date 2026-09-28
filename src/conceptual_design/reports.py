@@ -192,7 +192,7 @@ def print_design_card(result, mission, batt, D_rotor_m, rpm, Vtip) -> None:
     mission_s = mission.t_hover + mission.t_transition + mission.t_cruise
     print()
     print("+" + "="*58 + "+")
-    print("|  ELECTRIC V-BAT TAIL-SITTER -- CONCEPTUAL DESIGN CARD     |")
+    print("|  ELECTRIC TAIL-SITTER UAV -- CONCEPTUAL DESIGN CARD       |")
     print("+" + "="*58 + "+")
     print(f"|  MTOW                  {result.m_total_kg:>7.3f} kg                        |")
     print(f"|  Payload               {result.m_payload_kg:>7.3f} kg                        |")
@@ -268,7 +268,7 @@ def print_wing_card(af, wing, aero, ws, M, P, WS_design, V_stall,
     """The wing design card."""
     print()
     print("+" + "="*56 + "+")
-    print("|  WING DESIGN CARD — Electric V-BAT Tail-Sitter          |")
+    print("|  WING DESIGN CARD — Electric Tail-Sitter UAV             |")
     print("+" + "="*56 + "+")
     print(f"|  Airfoil designation   {af.designation:<33}|")
     print(f"|  t/c                   {ws.tc_ratio:.3f}{'':<30}|")

@@ -21,10 +21,10 @@ addLayers       true;
 
 geometry
 {
-    vbat.stl
+    tailsitter.stl
     {
         type triSurfaceMesh;
-        name vbat;
+        name tailsitter;
     }
 
     // Near-body refinement: whole airframe + margin
@@ -63,14 +63,14 @@ castellatedMeshControls
     features
     (
         {
-            file "vbat.eMesh";
+            file "tailsitter.eMesh";
             level 7;
         }
     );
 
     refinementSurfaces
     {
-        vbat
+        tailsitter
         {
             level (6 7);
             patchInfo { type wall; }
@@ -110,7 +110,7 @@ addLayersControls
 
     layers
     {
-        vbat
+        tailsitter
         {
             nSurfaceLayers 8;
         }

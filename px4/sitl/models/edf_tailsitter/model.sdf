@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  V-BAT-like single-EDF jet-vane tailsitter — Gazebo (gz) model.
+  Single-EDF jet-vane tailsitter — Gazebo (gz) model.
   DRAFT (ADR-0011).
 
   Frame: Gazebo FLU (x forward, y left, z up), model origin at the NOSE
@@ -25,7 +25,7 @@
   Draw no flight-dynamics conclusions from this model.
 -->
 <sdf version="1.9">
-  <model name="vbat_tailsitter">
+  <model name="edf_tailsitter">
 
     <link name="base_link">
       <!-- total vehicle 2.30242 kg minus the separately-linked rotor

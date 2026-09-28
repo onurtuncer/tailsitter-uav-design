@@ -736,7 +736,7 @@ def build_vehicle(
     #                                          reads against the grey body
     frame_color = cq.Color(0.45, 0.47, 0.52)   # frame members: darker metal
 
-    asm = cq.Assembly(name="vbat_tailsitter")
+    asm = cq.Assembly(name="edf_tailsitter")
     asm.add(fus_parts["fuselage_lower"], name="fuselage_lower", color=grey)
     asm.add(fus_parts["fuselage_lid"],   name="fuselage_lid",   color=lid_color)
     for name, fp in frame_disp.items():

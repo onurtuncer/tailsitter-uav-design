@@ -1,6 +1,6 @@
 # CFD Cases (OpenFOAM)
 
-RANS (simpleFoam, k-omega SST) cases characterizing the V-BAT tail-sitter,
+RANS (simpleFoam, k-omega SST) cases characterizing the tail-sitter,
 using geometry and reference quantities produced by the notebooks
 (`out/cad/`, `out/fuselage.yaml`, `out/control_vanes.yaml`,
 `config/mission.yaml`). Tested against OpenFOAM.com v2306+.
@@ -20,7 +20,7 @@ cd vehicle
 ./Allrun.mesh                      # geometry -> snappyHexMesh -> checkMesh
 ./Allrun.case -a 0 -V 20 -n 8 -s   # single AoA, or:
 ./Allrun.polar -n 8 -V 20 -- -4 -2 0 2 4 6 8 10 12
-python3 ../postprocess/foam2dml.py --polar-dir polar --out vbat_aero_cfd.dml --plot
+python3 ../postprocess/foam2dml.py --polar-dir polar --out tailsitter_aero_cfd.dml --plot
 
 # Propulsion map (duct/hub dims read from out/fuselage.yaml via make_geom.py)
 cd prop

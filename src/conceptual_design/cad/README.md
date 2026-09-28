@@ -1,7 +1,7 @@
-# CAD Assets – VBAT Conceptual Design
+# CAD Assets – Tail-Sitter Conceptual Design
 
 This directory contains all CAD geometry related to the electric
-tail-sitter (VBAT-style) UAV conceptual design.
+tail-sitter UAV conceptual design.
 
 Geometry is generated programmatically using **CadQuery**
 (built on OpenCascade / OCCT).

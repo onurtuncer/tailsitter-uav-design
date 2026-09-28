@@ -1,4 +1,4 @@
-"""VBAT -> Aeolion parametric geometry handoff (ADR-0016).
+"""Tail-sitter -> Aeolion parametric geometry handoff (ADR-0016).
 
 Emits `out/cad/aeolion_geometry.json` conforming to
 schemas/vbat-aeolion-geometry-handoff.schema.json (schema 1.8.0), the

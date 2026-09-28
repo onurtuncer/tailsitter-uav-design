@@ -1,4 +1,4 @@
-# Weight fractions for the V-BAT tail-sitter conceptual sizing study.
+# Weight fractions for the tail-sitter conceptual sizing study.
 #
 # These fractions express each non-battery, non-payload component group
 # as a fraction of MTOW.  They must sum to LESS than 1.0, leaving room

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ---------------------------------------------------------------------------
-# Grid generator for the V-BAT tail-sitter (vbat-uav-notebooks).
+# Grid generator for the tail-sitter (tailsitter-uav-design).
 #
 #   ./Allrun.mesh [path/to/repo/root] [nProcs]   (default: ../.., this repo)
 #
@@ -32,13 +32,13 @@ mkdir -p "$TRI" log
 # --- 1. Geometry ------------------------------------------------------------
 if [[ -f "$STL_SRC" ]]; then
     echo ">> Using repo STL: $STL_SRC"
-    cp "$STL_SRC" "$TRI/vbat_raw.stl"
+    cp "$STL_SRC" "$TRI/tailsitter_raw.stl"
 elif [[ -f "$STEP_SRC" ]]; then
     echo ">> No STL found; tessellating STEP with gmsh: $STEP_SRC"
     command -v gmsh >/dev/null || { echo "ERROR: gmsh required for STEP."; exit 1; }
     gmsh "$STEP_SRC" -2 -format stl \
          -clmin 0.5 -clmax 4 \
-         -o "$TRI/vbat_raw.stl" > log/gmsh.log 2>&1
+         -o "$TRI/tailsitter_raw.stl" > log/gmsh.log 2>&1
 else
     echo "ERROR: neither $STL_SRC nor $STEP_SRC exists."; exit 1
 fi
@@ -46,9 +46,9 @@ fi
 # --- 2. Scale mm -> m -------------------------------------------------------
 # Repo axis convention: body FRD, nose at x=0, tail at x=-712.56 mm.
 surfaceTransformPoints -scale '(0.001 0.001 0.001)' \
-    "$TRI/vbat_raw.stl" "$TRI/vbat.stl" > log/surfaceTransformPoints.log
+    "$TRI/tailsitter_raw.stl" "$TRI/tailsitter.stl" > log/surfaceTransformPoints.log
 
-surfaceCheck "$TRI/vbat.stl" > log/surfaceCheck.log 2>&1 || \
+surfaceCheck "$TRI/tailsitter.stl" > log/surfaceCheck.log 2>&1 || \
     echo "!! surfaceCheck reported issues -- inspect log/surfaceCheck.log"
 
 # --- 3. Meshing -------------------------------------------------------------

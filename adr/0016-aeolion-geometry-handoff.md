@@ -5,7 +5,7 @@ Status: Accepted (2026-07-19; supersedes the earlier ad-hoc JSON draft)
 ## Context
 
 Aeolion (companion VLM/BEMT repo) closes an adjoint optimization loop
-over the VBAT geometry. It needs a differentiable, fixed-topology
+over the tail-sitter geometry. It needs a differentiable, fixed-topology
 parametric description — not the watertight STEP solid, whose booleans
 and tessellation are nondifferentiable. The Aeolion side pinned the
 contract as a JSON Schema (2020-12, `additionalProperties: false`).
@@ -105,7 +105,7 @@ contract as a JSON Schema (2020-12, `additionalProperties: false`).
   fuselage surface so the root load transfers to the body — is left
   to Aeolion's side now that placement exists; it needs the `body`
   radius law (already in the contract since 1.2.0) evaluated at the
-  root LE station, not a new VBAT field.
+  root LE station, not a new contract field.
 - **Deflection range (schema 1.4.0, 2026-07-20)**: every
   `control_surfaces` entry carries `deflection_limits_deg` — the
   symmetric mechanical range about `hinge_axis` (`±delta_max_deg` from

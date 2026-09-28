@@ -218,7 +218,7 @@ def print_final_card(result, rotor, elec, fus, fus_cots, comp, findings) -> None
     as_sel = fus_cots["as_selected"]
     bar = "=" * 66
     print(bar)
-    print("  V-BAT-LIKE TAIL-SITTER -- FROZEN CONCEPTUAL DESIGN POINT".center(66))
+    print("  ELECTRIC TAIL-SITTER -- FROZEN CONCEPTUAL DESIGN POINT".center(66))
     print(bar)
     print(f"  {'MTOW (closure) / as-selected':<36}: {result.m_total_kg:.3f} / "
           f"{as_sel['m_items_total_kg']:.3f} kg")

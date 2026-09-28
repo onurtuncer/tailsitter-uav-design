@@ -1,4 +1,4 @@
-# Battery parameters for the V-BAT tail-sitter sizing study.
+# Battery parameters for the tail-sitter sizing study.
 #
 # specific_energy : pack-level specific energy [Wh/kg]
 #   140 Wh/kg is a conservative LiPo pack-level estimate.

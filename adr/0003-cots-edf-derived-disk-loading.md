@@ -51,7 +51,7 @@ runs deliberately low disk loading, and the configured rotor solidity
 (0.077) always corresponded to a ~3-blade propeller over the exposed
 annulus outside the 0.4 R hub — the sizing physics was modelling a prop
 all along; only the procurement assumption said "EDF cartridge". A
-prop-in-duct is also what the actual V-BAT flies. COTS 3-blade sizes
+prop-in-duct is also what full-scale single-fan tail-sitters fly. COTS 3-blade sizes
 bracket 195 mm (7" = 178 mm, 8" = 203 mm), so keeping 195 mm would mean a
 custom rotor — exactly what this ADR exists to avoid.
 

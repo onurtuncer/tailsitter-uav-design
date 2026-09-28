@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-wing_lighten.py -- Structural lightening for the V-BAT wing (the remedy for
+wing_lighten.py -- Structural lightening for the tail-sitter wing (the remedy for
 parts that cannot be blind-shelled: sharp trailing edges break 3-D BRep
 offsets, and a uniform shell is ill-defined where the section is thinner
 than two skins).
@@ -20,7 +20,7 @@ Method (robust by construction):
   5. Optional --spar-hole D: through-bore along the span at the first web
      fraction, at the local mid-thickness, for a carbon tube spar.
 
-Only valid for straight constant-section wings (the V-BAT wing is
+Only valid for straight constant-section wings (the tail-sitter wing is
 rectangular). For tapered/twisted wings, section-per-bay lofting would be
 needed.
 

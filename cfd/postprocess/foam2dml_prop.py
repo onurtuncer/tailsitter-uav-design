@@ -12,14 +12,14 @@ Inputs (either or both):
                            `forces` on (vane), CofR at the hinge line
 
 Outputs:
-  vbat_propulsion_cfd.dml
+  tailsitter_propulsion_cfd.dml
       installedThrust(V, T_disk)   2-D gridded table [N]
           T_installed = T_disk + Fx(duct + centerbody)
           (x = duct axis, thrust positive +x; the momentum source reaction
           is exactly T_disk, the surfaces add lip suction / ram drag)
       thrustAugmentation(V, T_disk) = T_installed / T_disk  (documentation
           table for the same grid)
-  vbat_controls_cfd.dml
+  tailsitter_controls_cfd.dml
       vaneNormalForceCoeff(delta[, V_jet])  CN = Fz / (q_jet S_vane)
       vaneHingeMomentCoeff(delta[, V_jet])  CH = My / (q_jet S_vane c_vane)
       per-vane, single vane in uniform jet; apply the mixing matrix from
@@ -229,8 +229,8 @@ def export_prop(prop_dir, avg_frac, out):
         sys.exit(f"run_meta.yaml missing geometry key {e}; sweep predates "
                  "the fuselage.yaml-sourced geometry -- re-run Allrun.prop")
 
-    dml = Dml("vbat_propulsion_cfd",
-              "Installed thrust map of the V-BAT ducted fan from steady RANS "
+    dml = Dml("tailsitter_propulsion_cfd",
+              "Installed thrust map of the tail-sitter ducted fan from steady RANS "
               "(OpenFOAM simpleFoam, k-omega SST) with a uniform actuator-"
               "disk momentum source " + geom_txt +
               "T_installed = T_disk + Fx(duct+centerbody): includes duct lip "
@@ -238,7 +238,7 @@ def export_prop(prop_dir, avg_frac, out):
               "CAD in the conceptual model -- combine with the momentum-"
               "theory fan model). Axis: thrust positive along +x_FRD. "
               "2-D tables, row-major, last breakpoint (diskThrust) fastest. "
-              "Companion to vbat_aero_cfd.dml and vbat_controls_cfd.dml.")
+              "Companion to tailsitter_aero_cfd.dml and tailsitter_controls_cfd.dml.")
     dml.var("axialVelocity", "V", "m_s", "Axial inflow speed along the duct axis.")
     dml.var("diskThrust", "Tdisk", "N", "Momentum imparted by the actuator disk.")
     dml.var("installedThrust", "Tinst", "N",
@@ -307,7 +307,7 @@ def export_vanes(vane_dir, avg_frac, out):
                  "the control_vanes.yaml-sourced geometry -- re-run "
                  "Allrun.vanes")
 
-    dml = Dml("vbat_controls_cfd",
+    dml = Dml("tailsitter_controls_cfd",
               "Single control-vane force and hinge-moment coefficients from "
               "steady RANS (OpenFOAM simpleFoam, k-omega SST). Flat-plate "
               + geom_txt +
@@ -316,8 +316,8 @@ def export_vanes(vane_dir, avg_frac, out):
               "My/(q_jet S c) about the hinge; positive delta deflects the "
               "LE toward -z (positive CN), jet along -x. Per-vane data: "
               "apply the T/B/L/R mixing matrix from control_vanes.yaml "
-              "downstream. Companion to vbat_aero_cfd.dml and "
-              "vbat_propulsion_cfd.dml.")
+              "downstream. Companion to tailsitter_aero_cfd.dml and "
+              "tailsitter_propulsion_cfd.dml.")
     dml.var("vaneDeflection", "delta", "deg",
             f"Vane deflection about the {hinge:.2f}c hinge line.")
     if two_d:
@@ -363,8 +363,8 @@ def main():
     ap.add_argument("--prop-dir")
     ap.add_argument("--vane-dir")
     ap.add_argument("--avg-frac", type=float, default=0.25)
-    ap.add_argument("--prop-out", default="vbat_propulsion_cfd.dml")
-    ap.add_argument("--vane-out", default="vbat_controls_cfd.dml")
+    ap.add_argument("--prop-out", default="tailsitter_propulsion_cfd.dml")
+    ap.add_argument("--vane-out", default="tailsitter_controls_cfd.dml")
     args = ap.parse_args()
     if not (args.prop_dir or args.vane_dir):
         sys.exit("give --prop-dir and/or --vane-dir")

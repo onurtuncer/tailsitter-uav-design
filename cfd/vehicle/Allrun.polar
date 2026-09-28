@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ---------------------------------------------------------------------------
-# AoA polar sweep for the V-BAT case (run AFTER Allrun.mesh).
+# AoA polar sweep for the tail-sitter case (run AFTER Allrun.mesh).
 #
 #   ./Allrun.polar [-n nProcs] [-V speed] -- AOA1 AOA2 ...
 #   e.g.  ./Allrun.polar -n 8 -V 20 -- -4 -2 0 2 4 6 8 10 12
@@ -50,4 +50,4 @@ done
 
 echo
 echo ">> Sweep complete. Export DAVE-ML:"
-echo "     python3 ../postprocess/foam2dml.py --polar-dir polar --out vbat_aero_cfd.dml --plot"
+echo "     python3 ../postprocess/foam2dml.py --polar-dir polar --out tailsitter_aero_cfd.dml --plot"

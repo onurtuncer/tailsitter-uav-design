@@ -35,16 +35,16 @@ tailsitter lives. The database is therefore split:
 
 | File | Form | Valid regime |
 |---|---|---|
-| `vbat_aero.dml` | coefficients (power-off airframe) | V ≥ ~5 m/s |
-| `vbat_prop.dml` | **dimensional** N / N·m vs throttle state | all speeds |
-| `vbat_vanes.dml` | **dimensional** N / N·m vs deflection + jet state | all speeds |
-| `vbat_inertia.dml` | constants | — |
+| `tailsitter_aero.dml` | coefficients (power-off airframe) | V ≥ ~5 m/s |
+| `tailsitter_prop.dml` | **dimensional** N / N·m vs throttle state | all speeds |
+| `tailsitter_vanes.dml` | **dimensional** N / N·m vs deflection + jet state | all speeds |
+| `tailsitter_inertia.dml` | constants | — |
 
 Total loads = airframe coefficients (faded in with airspeed) +
 prop/duct + vane increments. Aetherion composes the superposition; the
 fade law is defined here (breakpointed on airspeed), not hardcoded there.
 
-## vbat_aero.dml — power-off airframe
+## tailsitter_aero.dml — power-off airframe
 
 Inputs: `alpha` [deg], `beta` [deg], `vt` [m/s], `p`,`q`,`r` [rad/s],
 `da_l`,`da_r` [deg] (aileron deflections).
@@ -63,7 +63,7 @@ Draft breakpoint grid (transition corridor gets the density):
   flagged `estimated` in the varDef description, replaced if forced
   oscillation or system-ID data arrives)
 
-## vbat_prop.dml — EDF + duct, power-on
+## tailsitter_prop.dml — EDF + duct, power-on
 
 Inputs: `throttle` [0–1] (or `rpm`), `vt` [m/s], `alpha` [deg].
 Outputs: `fx_N fy_N fz_N mx_Nm my_Nm mz_Nm` **plus `q_jet_Pa`** (feeds
@@ -77,7 +77,7 @@ vt {0, 5, 10, 16, 20, 26} × alpha {0, 15, 30, 60, 90}.
 Static check-cases: hover 30.3 N at throttle 0.61; `T_max_N` 50 at 1.0
 (config/rotor.yaml); `q_jet` 780.3 Pa at hover (out/control_vanes.yaml).
 
-## vbat_vanes.dml — jet vane increments
+## tailsitter_vanes.dml — jet vane increments
 
 Inputs: `dv_t dv_b dv_l dv_r` [deg, ±20 hard stop], `q_jet_Pa` (from the
 prop model), `vt`, `alpha`.
@@ -93,7 +93,7 @@ Check-case: 10° single vane at hover q_jet → 0.719 N
 (out/control_vanes.yaml) for the analytic issue; re-pinned when CFD
 replaces it.
 
-## vbat_inertia.dml
+## tailsitter_inertia.dml
 
 Straight transcription of `out/mass_properties.yaml`: mass 2.37626 kg,
 Ixx 0.022453, Iyy 0.041776, Izz 0.054148 kg·m² (products zero), CG

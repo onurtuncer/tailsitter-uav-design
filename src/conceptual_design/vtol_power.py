@@ -307,7 +307,7 @@ def vtol_power_requirements(
 
 
 if __name__ == "__main__":
-    # Quick smoke-test with representative V-BAT-scale numbers
+    # Quick smoke-test with representative design-scale numbers
     p = VTOLParams(FoM=0.70, CD_blade=0.01, sigma=0.077, S_ratio=1.3)
     W_N = 5.0 * 9.80665   # 5 kg MTOW
     res = vtol_power_requirements(

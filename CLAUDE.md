@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Conceptual design study for a small electric tail-sitter VTOL UAV
-(V-BAT-like, single EDF, jet vanes). Python physics package + Jupyter
+(single EDF, jet vanes). Python physics package + Jupyter
 notebooks + CadQuery CAD + OpenFOAM CFD cases, all wired into CI.
 
 ## Architecture: the design pipeline
@@ -16,7 +16,7 @@ config/*.yaml  ->  src/conceptual_design/  ->  notebooks/  ->  out/  ->  cfd/
 Notebook execution order matters — each writes YAML handoffs to `out/`
 that the next one reads:
 
-1. `vbat_conceptual_design` — mission sizing, mass closure (MTOW, wing, power)
+1. `tailsitter_conceptual_design` — mission sizing, mass closure (MTOW, wing, power)
 2. `wing_design` — airfoil selection → `out/airfoil.yaml`
 3. `control_vane_design` — jet vanes → `out/control_vanes.yaml`
 4. `aileron_design` — cruise-phase roll backup → `out/aileron.yaml`

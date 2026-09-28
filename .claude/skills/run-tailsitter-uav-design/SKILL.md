@@ -1,12 +1,12 @@
 ---
-name: run-vbat-uav-notebooks
-description: Run, build, and test the V-BAT tail-sitter design pipeline. Use when asked to run the sizing loop, execute the design notebooks, regenerate out/ artifacts, or run the design-regression tests.
+name: run-tailsitter-uav-design
+description: Run, build, and test the tail-sitter design pipeline. Use when asked to run the sizing loop, execute the design notebooks, regenerate out/ artifacts, or run the design-regression tests.
 ---
 
 This repo is a one-way design pipeline (`config/*.yaml` → `src/` physics →
 `notebooks/` → `out/` handoffs), not a server or GUI. "Running the app" means
 running that pipeline. Drive it via
-`.claude/skills/run-vbat-uav-notebooks/driver.py` with the repo venv's Python.
+`.claude/skills/run-tailsitter-uav-design/driver.py` with the repo venv's Python.
 
 All paths are relative to the repo root. All commands below were verified on
 Windows (Git Bash) with the committed `.venv` (Python 3.14).
@@ -29,7 +29,7 @@ The driver has three subcommands. `smoke` is the fast check (~1 s, no
 notebooks) — it runs the mass-closure sizing loop directly from `config/`:
 
 ```bash
-./.venv/Scripts/python.exe .claude/skills/run-vbat-uav-notebooks/driver.py smoke
+./.venv/Scripts/python.exe .claude/skills/run-tailsitter-uav-design/driver.py smoke
 ```
 
 Expected output (current design point, 203 mm prop-in-duct per the
@@ -51,13 +51,13 @@ copies land in `executed/`, design outputs in `out/`, figures in
 auto-skipped when CadQuery can't import (always, on the local 3.14 venv):
 
 ```bash
-./.venv/Scripts/python.exe .claude/skills/run-vbat-uav-notebooks/driver.py pipeline
+./.venv/Scripts/python.exe .claude/skills/run-tailsitter-uav-design/driver.py pipeline
 ```
 
 Run a single notebook (repeatable, dependency order is on you):
 
 ```bash
-./.venv/Scripts/python.exe .claude/skills/run-vbat-uav-notebooks/driver.py pipeline --nb wiring_diagram
+./.venv/Scripts/python.exe .claude/skills/run-tailsitter-uav-design/driver.py pipeline --nb wiring_diagram
 ```
 
 | subcommand | what it does |
@@ -88,7 +88,7 @@ runpy `found in sys.modules` RuntimeWarning is harmless):
 ## Test
 
 ```bash
-./.venv/Scripts/python.exe .claude/skills/run-vbat-uav-notebooks/driver.py test
+./.venv/Scripts/python.exe .claude/skills/run-tailsitter-uav-design/driver.py test
 ```
 
 Runs `tests/test_design_outputs.py` + `tests/test_geometry.py` — the same
@@ -103,7 +103,7 @@ after an intentional design change means the pins (and
 Full suite + lint:
 
 ```bash
-./.venv/Scripts/python.exe .claude/skills/run-vbat-uav-notebooks/driver.py test --all
+./.venv/Scripts/python.exe .claude/skills/run-tailsitter-uav-design/driver.py test --all
 ./.venv/Scripts/python.exe -m ruff check src tests scripts printprep cfd
 ```
 

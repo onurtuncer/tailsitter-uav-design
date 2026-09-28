@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# @name V-BAT-like single-EDF jet-vane tailsitter (Gazebo SITL)
+# @name Single-EDF jet-vane tailsitter (Gazebo SITL)
 # @type VTOL Tailsitter
 # @class VTOL
 #
 # DRAFT (ADR-0011). SITL counterpart of
-# px4/airframes/22100_vbat_tailsitter -- that file is the source of
+# px4/airframes/22100_edf_tailsitter -- that file is the source of
 # truth; the CA/VT/FW/battery params below are kept in sync with it BY
 # HAND until a generator exists. Only the simulator bindings
 # (PX4_SIM_MODEL, SIM_GZ_*) are unique to this file.
@@ -20,9 +20,9 @@
 
 PX4_SIMULATOR=${PX4_SIMULATOR:=gz}
 PX4_GZ_WORLD=${PX4_GZ_WORLD:=default}
-PX4_SIM_MODEL=${PX4_SIM_MODEL:=vbat_tailsitter}
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=edf_tailsitter}
 
-# --- synced with 22100_vbat_tailsitter (see there for provenance) ----
+# --- synced with 22100_edf_tailsitter (see there for provenance) ----
 param set-default CA_AIRFRAME 4
 param set-default VT_TYPE 0
 

@@ -1,26 +1,26 @@
-# Electric V-BAT-Like Tail-Sitter (EDF) – Conceptual Design Study
+# Electric Tail-Sitter UAV (EDF) – Conceptual Design Study
 
-[![CI](https://github.com/onurtuncer/vbat-uav-notebooks/actions/workflows/ci.yml/badge.svg)](https://github.com/onurtuncer/vbat-uav-notebooks/actions/workflows/ci.yml)
-[![Design Pipeline](https://github.com/onurtuncer/vbat-uav-notebooks/actions/workflows/design-pipeline.yml/badge.svg)](https://github.com/onurtuncer/vbat-uav-notebooks/actions/workflows/design-pipeline.yml)
-[![Release](https://img.shields.io/github/v/tag/onurtuncer/vbat-uav-notebooks?label=release)](https://github.com/onurtuncer/vbat-uav-notebooks/releases)
+[![CI](https://github.com/onurtuncer/tailsitter-uav-design/actions/workflows/ci.yml/badge.svg)](https://github.com/onurtuncer/tailsitter-uav-design/actions/workflows/ci.yml)
+[![Design Pipeline](https://github.com/onurtuncer/tailsitter-uav-design/actions/workflows/design-pipeline.yml/badge.svg)](https://github.com/onurtuncer/tailsitter-uav-design/actions/workflows/design-pipeline.yml)
+[![Release](https://img.shields.io/github/v/tag/onurtuncer/tailsitter-uav-design?label=release)](https://github.com/onurtuncer/tailsitter-uav-design/releases)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
 
 **📖 Documentation:** rendered design notebooks are published at
-**<https://onurtuncer.github.io/vbat-uav-notebooks/>**
+**<https://onurtuncer.github.io/tailsitter-uav-design/>**
 
 <p align="center">
-  <a href="https://onurtuncer.github.io/vbat-uav-notebooks/viewer.html">
+  <a href="https://onurtuncer.github.io/tailsitter-uav-design/viewer.html">
     <img src="assets/vbat_render.png" width="560" alt="Rendered CAD model of the tail-sitter standing on its landing legs, nose up"/>
   </a>
   <br/>
   <em>The current design point, rendered from the CadQuery solid model the
   pipeline exports on every run — click the image for the
-  <a href="https://onurtuncer.github.io/vbat-uav-notebooks/viewer.html">interactive 3D viewer</a>
+  <a href="https://onurtuncer.github.io/tailsitter-uav-design/viewer.html">interactive 3D viewer</a>
   (orbit, exploded view).
   Regenerate with <code>python scripts/render_readme_cad.py</code> after a design change.</em>
 </p>
 
-This repository contains a **first-principles conceptual sizing study** for a **small electric tail-sitter VTOL UAV** inspired by the *very early electric ancestors* of the V-BAT concept.
+This repository contains a **first-principles conceptual sizing study** for a **small electric tail-sitter VTOL UAV** of the single-ducted-fan, jet-vane-controlled class.
 
 The focus is **not** on a production UAV, but on:
 - architectural feasibility,
@@ -199,7 +199,7 @@ jupyter lab
 Run the notebooks top-to-bottom **in this order** (each one writes YAML
 handoff files to `out/` that the next one reads):
 
-1. `notebooks/vbat_conceptual_design.ipynb` — mission sizing & mass closure
+1. `notebooks/tailsitter_conceptual_design.ipynb` — mission sizing & mass closure
 2. `notebooks/wing_design.ipynb` — airfoil selection & wing design
 3. `notebooks/control_vane_design.ipynb` — control vane sizing
 4. `notebooks/fuselage_design.ipynb` — fuselage layout & drag trade (reads the vane results)
@@ -226,7 +226,7 @@ git tag v0.2.0 && git push --tags
 
 CI then re-runs the whole design pipeline and attaches the design
 snapshot (design-point YAMLs, STEP/STL geometry, rendered notebooks) to
-the [GitHub Release](https://github.com/onurtuncer/vbat-uav-notebooks/releases).
+the [GitHub Release](https://github.com/onurtuncer/tailsitter-uav-design/releases).
 Suggested convention: bump **minor** for a new design point or analysis
 capability, **patch** for corrections that do not move the design.
 
@@ -278,7 +278,7 @@ Please see LICENSE file. Open for research and educational use.
 
 ## Author Notes
 
-This project intentionally mirrors how early electric V-BAT-like demonstrators would have been sized before fuel engines, autonomy stacks, or other payloads were introduced.
+This project intentionally mirrors how early electric ducted-fan tail-sitter demonstrators would have been sized before fuel engines, autonomy stacks, or other payloads were introduced.
 
 ## 👤 Author
 

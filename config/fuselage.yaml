@@ -1,5 +1,5 @@
 # Fuselage packaging, shape, and structure parameters for the
-# V-BAT tail-sitter conceptual design.  Used by fuselage_design.py.
+# tail-sitter conceptual design.  Used by fuselage_design.py.
 #
 # ------------------------------------------------------------------
 # AXIS CONVENTION (consistent with the Aetherion 6-DoF library):

@@ -1,4 +1,4 @@
-# Vibration isolation parameters for the V-BAT tail-sitter conceptual design.
+# Vibration isolation parameters for the tail-sitter conceptual design.
 # Used by vibration_isolation.py.
 #
 # The single EDF is a high-RPM rotating machine bolted to a stiff CFRP
