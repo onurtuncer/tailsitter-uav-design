@@ -17,7 +17,7 @@ Notebook execution order matters — each writes YAML handoffs to `out/`
 that the next one reads:
 
 1. `tailsitter_conceptual_design` — mission sizing, mass closure (MTOW, wing, power)
-2. `wing_design` — airfoil selection → `out/airfoil.yaml`
+2. `wing_design` — airfoil selection + candidate-wing comparison (ADR-0019, fixed body drag area) → `out/airfoil.yaml`
 3. `control_vane_design` — jet vanes → `out/control_vanes.yaml`
 4. `aileron_design` — cruise-phase roll backup → `out/aileron.yaml`
 5. `vibration_isolation` — FC/IMU + payload soft mounts → `out/vibration.yaml`

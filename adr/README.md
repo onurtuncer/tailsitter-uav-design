@@ -29,3 +29,4 @@ Format: one file per decision, `NNNN-kebab-title.md`, each with
 | [0016](0016-aeolion-geometry-handoff.md) | Versioned JSON plus STEP for the Aeolion handoff | Accepted |
 | [0017](0017-prop-blade-clark-y-section-and-rotation-sense.md) | Propeller blade section (Clark Y) and rotation sense | Accepted |
 | [0018](0018-aeolion-handoff-own-notebook.md) | Aeolion handoff as its own pipeline notebook stage | Accepted |
+| [0019](0019-body-drag-area-and-wing-comparison.md) | Fixed body drag area in NB2 + candidate-wing comparison | Accepted |
