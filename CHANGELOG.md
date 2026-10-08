@@ -9,6 +9,27 @@ is tagged.
 
 ## [Unreleased]
 
+## [0.5.5] — 2026-10-08
+
+Documentation and metadata release with no design change. This is the
+first release archived on Zenodo, which assigns it a DOI.
+
+### Changed
+
+- **README rewritten for the current design.** The old README described
+  the original five-notebook study (1680 s cruise mission, "no CFD / no
+  vendor-specific components", no thermal limits). It now covers the
+  vehicle concept and its ADRs, the 120 s + 40 s + 900 s mission, the
+  design point and frozen COTS hardware, the modeling approach, the
+  standing findings, all sixteen notebooks, the repository layout and
+  the CI tiers.
+
+### Added
+
+- **Author ORCID iD in `CITATION.cff`** (0000-0002-2803-1146), plus a
+  README citation section. Zenodo reads both the authors and the
+  ORCID from the CFF file.
+
 ## [0.5.4] — 2026-10-08
 
 Release-process fix with no design change. The release workflow now runs
