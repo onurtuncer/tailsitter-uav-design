@@ -1,0 +1,34 @@
+# Citation metadata — read by GitHub ("Cite this repository") and by
+# Zenodo when a release is archived. Version and release date are
+# deliberately omitted: the version comes from the git tag
+# (setuptools-scm) and Zenodo stamps both from the GitHub release.
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "Electric Tail-Sitter UAV (EDF) – Conceptual Design Study"
+abstract: >-
+  First-principles conceptual sizing study for a small electric tail-sitter
+  VTOL UAV with a single ducted fan and jet-vane control. A Python physics
+  package, Jupyter notebooks, CadQuery CAD and OpenFOAM CFD case setups form
+  a one-way design pipeline (mission sizing and mass closure, wing and airfoil
+  selection, jet-vane and aileron control sizing, vibration isolation,
+  fuselage layout, thermal design, solid model, mass properties, electrical
+  design and COTS component selection), all validated in continuous
+  integration.
+authors:
+  - family-names: Tuncer
+    given-names: Onur
+    affiliation: Istanbul Technical University
+repository-code: "https://github.com/onurtuncer/tailsitter-uav-design"
+url: "https://onurtuncer.github.io/tailsitter-uav-design/"
+license: MIT
+keywords:
+  - UAV
+  - VTOL
+  - tail-sitter
+  - conceptual design
+  - aircraft sizing
+  - ducted fan
+  - jet vanes
+  - CadQuery
+  - OpenFOAM
