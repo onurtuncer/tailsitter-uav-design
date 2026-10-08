@@ -5,6 +5,7 @@
 [![Release](https://img.shields.io/github/v/tag/onurtuncer/tailsitter-uav-design?label=release)](https://github.com/onurtuncer/tailsitter-uav-design/releases)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23238441.svg)](https://doi.org/10.5281/zenodo.23238441)
 
 **📖 Documentation:** rendered design notebooks, an interactive 3D viewer and
 the bill of materials are published at
