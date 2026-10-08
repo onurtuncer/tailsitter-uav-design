@@ -9,6 +9,30 @@ is tagged.
 
 ## [Unreleased]
 
+## [0.5.4] — 2026-10-08
+
+Release-process fix with no design change. The release workflow now runs
+all sixteen notebooks, so a tagged snapshot is fully regenerated. The
+repository is also prepared for archiving on Zenodo.
+
+### Fixed
+
+- **The release workflow ran only 8 of the 16 notebooks.** Its notebook
+  list dated from before NB4/NB5/NB7 and NB12–NB16 existed, so every
+  release from v0.4.4 through v0.5.3 mixed freshly computed outputs
+  with the committed `out/` copies for thermal, COTS selection, the
+  `*_cots` re-solves and the design summary. `release.yml` now carries
+  the same `NOTEBOOK_ORDER` as `design-pipeline.yml`, and the new
+  `tests/test_workflows.py` fails if the two lists diverge or miss a
+  notebook in `notebooks/`.
+
+### Added
+
+- **`CITATION.cff`** (CFF 1.2.0): author and affiliation, abstract,
+  keywords and MIT license. GitHub's "Cite this repository" button
+  and the Zenodo GitHub integration read it. Version and release date
+  are left out on purpose, because they come from the git tag.
+
 ## [0.5.3] — 2026-09-28
 
 Minor design-point change: NB2 now holds the fuselage drag as a fixed
