@@ -20,6 +20,12 @@ authors:
     given-names: Onur
     affiliation: Istanbul Technical University
     orcid: "https://orcid.org/0000-0002-2803-1146"
+  - family-names: Üçler
+    given-names: Çağlar
+    affiliation: Özyeğin University
+  - family-names: Güneş
+    given-names: Ahmet
+    affiliation: Istanbul Technical University
 repository-code: "https://github.com/onurtuncer/tailsitter-uav-design"
 url: "https://onurtuncer.github.io/tailsitter-uav-design/"
 license: MIT
